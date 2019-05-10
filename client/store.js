@@ -14,7 +14,10 @@ const defaultState = {
   comments,
 };
 
-const store = createStore(rootReducer, defaultState);
+// allow debugging using redux dev tools extension
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(rootReducer, defaultState, composeEnhancers());
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
