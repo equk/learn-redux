@@ -7,7 +7,15 @@ const Comments = React.createClass({
         <p>
           <strong>{comment.user}</strong>
           {comment.text}
-          <button type="button" className="remove-comment">
+          <button
+            type="button"
+            className="remove-comment"
+            onClick={this.props.removeComment.bind(
+              null,
+              this.props.params.postId,
+              i
+            )}
+          >
             &times;
           </button>
         </p>
