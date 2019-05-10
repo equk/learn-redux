@@ -30,7 +30,11 @@ const Photo = React.createClass({
         <figcaption>
           <p>{post.caption}</p>
           <div className="control-buttons">
-            <button className="likes" type="button">
+            <button
+              onClick={this.props.increment.bind(null, i)}
+              className="likes"
+              type="button"
+            >
               &hearts; {post.likes}
             </button>
             <Link className="button" to={`/view/${post.code}`}>
