@@ -24,3 +24,14 @@ wesbos youtube guide to redux - [link](https://www.youtube.com/watch?v=sAzh8t1H0
 - [x] Video 18 - Hot Reloading Redux Reducers with webpack
 - [x] Video 19 - Redux Dev Tools
 - [x] Video 20 - Wrap Up and Next Steps
+
+## Notes
+
+Had to fix the `store.js` file to allow redux dev tools extension permissions
+
+    // allow debugging using redux dev tools extension
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+    const store = createStore(rootReducer, defaultState, composeEnhancers());
+
+Uses compose middleware from redux
